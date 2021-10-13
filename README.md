@@ -1,8 +1,8 @@
 # Global Read.md
 
-This is a Global readme file containing information about  all three variations Survey services
-This file is useful to understand the variation among all implementations
-Alternatively you can go to each service to know the details too.
+This is a Global readme file containing information about  all three variations Survey services.
+This file is meant to provide an understanding of variations among all implementations.
+Alternatively you can go to each service to know  details respective to individual services too.
 
 # 1 
 
@@ -45,8 +45,8 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 
 1. This Survey service is a node (with Express) microservice that runs on port 8080
 
-2. It is built with Service based architecture wherein the Layers are segregated into Controller, Service and
-   Data Access layer is not used as the data is stored using filesystem
+2. It is built with Service based architecture wherein the Layers are segregated into Controller, Service.
+   Data Access layer is not used as the data is stored using global object of node.
 
 3. Overall Four API's are exposed from this service to perform CRUD operation for the service
    a. create : (Creates a Survey with questions) --> mapped to route : '/'
@@ -193,8 +193,8 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 
 1. This Survey service is a node (with Express) microservice that runs on port 8080
 
-2. It is built with Service based architecture wherein the Layers are segregated into Controller, Service and
-   Data Access layer is not used as the data is stored using filesystem
+2. It is built with Service based architecture wherein the Layers are segregated into Controller, Service.
+   Data Access layer is not used as the data is stored using node-cache.
 
 3. Overall Four API's are exposed from this service to perform CRUD operation for the service
    a. create : (Creates a Survey with questions) --> mapped to route : '/'
