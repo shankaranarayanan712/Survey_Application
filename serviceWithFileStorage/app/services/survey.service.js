@@ -32,7 +32,7 @@ try {
         let surveys = fs.readFileSync(`${__dirname}/surveys.txt`, options);
         surveys = JSON.parse(surveys);
         const survey = surveys.filter(survey => survey.id === id);
-        if(!survey) {
+        if(!survey ||  !survey.length) {
             return constructResponse(404, constants.errorMessages.NO_SURVEY)
         }
         return constructResponse(200,survey)
@@ -82,7 +82,7 @@ try {
             await fs.writeFileSync(`${__dirname}/surveys.txt`, totalSurveys);
             return constructResponse(200,surveyObj)
         } else {
-            return constructResponse(400,INVALID_SURVEY_ID)
+            return constructResponse(400,constants.errorMessages.INVALID_SURVEY_ID)
         }
     }  else {
         return constructResponse(400, constants.errorMessages.CANT_GET_FILE)
