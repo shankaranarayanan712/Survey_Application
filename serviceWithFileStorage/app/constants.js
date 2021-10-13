@@ -67,6 +67,15 @@ const programmingSurvey = {
   }, 
   ]
 };
+
+const errorMessages = {
+  NO_SURVEY : 'No survey is present for this request',
+  CANT_FIND : 'Cannot find any surveys at the moment, make sure that surveys are added',
+  CANT_GET_FILE : 'Oops, Surveys are Empty, Please make sure at-least one survey is added',
+  INVALID_SURVEY_ID : 'Please make sure the survey exists before answering'
+}
+const status = [{code:200, message:'Ok'},{code:201, message:'Created'},{code:404, message:'Not found'},{code:400, message:'Bad Request'}]
 module.exports = {
-    chainTypes: chainTypes
+    status: status,
+    errorMessages:errorMessages
 }
