@@ -37,7 +37,7 @@ try {
         }
         return constructResponse(200,survey)
         } else {
-            return constructResponse(400, constants.errorMessages.CANT_GET_FILE)
+            return constructResponse(404, constants.errorMessages.INVALID_SURVEY_ID)
         }
     } catch(err){
         console.log("Err:", err);
@@ -51,11 +51,11 @@ try {
         let surveys = fs.readFileSync(`${__dirname}/surveys.txt`, options);
         surveys = JSON.parse(surveys);
         if(!surveys) {
-                return constructResponse(404, constants.errorMessages.CANT_FIND)
+                return constructResponse(400, constants.errorMessages.INVALID_SURVEY_ID)
         }
        return constructResponse(200,surveys)
     } else {
-        return constructResponse(400, constants.errorMessages.CANT_GET_FILE)
+        return constructResponse(400, constants.errorMessages.INVALID_SURVEY_ID)
     }
     } catch(err){
             console.log("Err:", err);
@@ -65,7 +65,7 @@ try {
 const answerSurvey = async (id,reqBody) => {
 try {
     const {title,questions} = reqBody;
-    const surveyObj =  { id: uuidv4(), title, questions }
+    const surveyObj =  {id, title, questions ,updatedAt:new Date()}
     if(fs.existsSync(`${__dirname}/surveys.txt`)){
         const options ={encoding:'utf8', flag:'r'}
         let surveys = fs.readFileSync(`${__dirname}/surveys.txt`, options);
@@ -85,7 +85,7 @@ try {
             return constructResponse(400,constants.errorMessages.INVALID_SURVEY_ID)
         }
     }  else {
-        return constructResponse(400, constants.errorMessages.CANT_GET_FILE)
+        return constructResponse(400, constants.errorMessages.INVALID_SURVEY_ID)
     }
     } catch(err){
             console.log("Err:", err);
