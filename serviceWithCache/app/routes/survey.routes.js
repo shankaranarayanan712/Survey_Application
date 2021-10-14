@@ -10,5 +10,7 @@ module.exports = app => {
   // Get All Surveys
   router.get("/", survey.getAllSurveys);
 
+  router.get("/aggregated/result", survey.getAggregatedResult);
+
   app.use("/api/survey", router);
 };
