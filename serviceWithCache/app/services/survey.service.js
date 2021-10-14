@@ -65,7 +65,7 @@ try {
         } catch(err){
             console.log("Err:", err);
         }
-    }
+}
 
 const getAllSurveys = async () => {
 try {

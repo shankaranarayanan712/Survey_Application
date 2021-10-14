@@ -177,5 +177,12 @@ describe('Survey Service Test cases', function() {
         expect(jsonResponse.code).toEqual(200)
         expect(res).toHaveProperty('body');
     }, 50000);
+    it('Should get all Survey', async () => {
+        const res = await request(app)
+        .get('/api/survey/aggregated/result')
+        const jsonResponse = JSON.parse(res.text);
+        expect(jsonResponse.code).toEqual(200)
+        expect(res).toHaveProperty('body');
+    }, 50000);
 
 }); 

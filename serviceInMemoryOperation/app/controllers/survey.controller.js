@@ -54,11 +54,19 @@ try {
         console.log("Err is:", err);
   }
 };
-
+const getAggregatedResult = async (req, res) => {
+  try{
+    const response = await surveyService.getAggregatedResult(req);
+    return res.send(response);
+    } catch(err){
+        console.log("Err is:", err);
+    }
+  };
 module.exports ={
   create: create,
   get:get,
   answerSurvey:answerSurvey,
-  getAllSurveys:getAllSurveys
+  getAllSurveys:getAllSurveys,
+  getAggregatedResult: getAggregatedResult
 }
 
