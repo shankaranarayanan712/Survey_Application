@@ -70,7 +70,7 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 11. Data Structure to store the Survey is : 1. Array of Object 2. Jagged  Array(to map questions with answers)
     To see sample Request Object please refer 'programmingSurvey' in constants.js file
     That can be also used as request to create Surveys
-
+12. Testing: Unit testing is done using Jest and supertest  libraries
 
 
 

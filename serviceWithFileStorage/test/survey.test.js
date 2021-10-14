@@ -170,6 +170,14 @@ describe('Survey Service Test cases', function() {
         expect(res).toHaveProperty('body');
     }, 50000);
 
+    it('Should get all Survey', async () => {
+        const res = await request(app)
+        .get('/api/survey/aggregated/result')
+        const jsonResponse = JSON.parse(res.text);
+        expect(jsonResponse.code).toEqual(200)
+        expect(res).toHaveProperty('body');
+    }, 50000);
+
     // Pass the correct id after it is saved in file to get exact result
     // 8cfc7151-1bb2-4bf3-b081-4ba5c72155a4 --> Replace this with valid id once created
     // it('Should update', async () => {

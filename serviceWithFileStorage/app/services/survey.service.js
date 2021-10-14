@@ -92,6 +92,30 @@ try {
 }
 }
 
+const getAggregatedResult = async (req) => {
+    try {
+        const selectedSurvey = await getAllSurveys();
+        let aggregatedResult = [];
+        if(selectedSurvey && selectedSurvey.code === 200) {
+            aggregatedResult =  selectedSurvey && selectedSurvey.body.reduce(function (r, a) {
+                    r[a.title] = r[a.title] || [];
+                    r[a.title].push(a);
+                    return r;
+                }, Object.create(null));
+                if(aggregatedResult) {
+                    return constructResponse(200,aggregatedResult)
+                } else {
+                    return constructResponse(400, constants.errorMessages.CANT_GET_FILE)
+                }
+            }  else{
+                return selectedSurvey;
+            }
+            } catch(err){
+                console.log("Err:", err);
+            }
+    }
+    
+
 
 const constructResponse = (status, body) => {
     if(!body || !status) {
@@ -109,4 +133,5 @@ module.exports = {
     get:get,
     getAllSurveys:getAllSurveys,
     answerSurvey:answerSurvey,
+    getAggregatedResult:getAggregatedResult
 }
