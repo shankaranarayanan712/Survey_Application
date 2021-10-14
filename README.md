@@ -48,12 +48,12 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 2. It is built with Service based architecture wherein the Layers are segregated into Controller, Service and
    Data Access layer is not used as the data is stored using filesystem
 
-3. Overall Four API's are exposed from this service to perform CRUD operation for the service
-   a. create : (Creates a Survey with questions) --> mapped to route : '/'
-   b  get All survey  (gets all survey) --> mapped to route : 'get/'
-   c. get survey by id  (gets a survey with given Id) --> mapped to route : 'get/:id'
-   d. Answer Survey (Answers a particular Survey) :  --> mapped to route : 'update/:id'
-   e. Get Aggregated survey -- >  mapped to route : '/aggregated/result'
+3. Overall Five API's are exposed from this service to perform CRUD operation for the service
+   a. create : (Creates a Survey with questions) --> mapped to route : post '/api/survey/'
+   b  get All survey  (gets all survey) --> mapped to route : get '/api/survey/'
+   c. get survey by id  (gets a survey with given Id) --> mapped to route : get '/api/survey:id'
+   d. Answer Survey (Answers a particular Survey) :  --> mapped to route : put'/api/survey/:id'
+   e. Get Aggregated survey -- >  mapped to route : get '/api/survey/aggregated/result'
  
 4. The Endpoint to get Aggregated survey gets all the grouped survey based on the survey name
    For Ex: If you create a Programing language survey and a Gaming Survey, the aggregated survey
@@ -129,12 +129,12 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 2. It is built with Service based architecture wherein the Layers are segregated into Controller, Service.
    Data Access layer is not used as the data is stored using global object of node.
 
-3. Overall Four API's are exposed from this service to perform CRUD operation for the service
-   a. create : (Creates a Survey with questions) --> mapped to route : '/'
-   b  get All survey  (gets all survey) --> mapped to route : 'get/'
-   c. get survey by id  (gets a survey with given Id) --> mapped to route : 'get/:id'
-   d. Answer Survey (Answers a particular Survey) :  --> mapped to route : 'update/:id'
-   e. Get Aggregated survey -- >  mapped to route : '/aggregated/result'
+3. Overall Five API's are exposed from this service to perform CRUD operation for the service
+   a. create : (Creates a Survey with questions) --> mapped to route : post '/api/survey/'
+   b  get All survey  (gets all survey) --> mapped to route : get '/api/survey/'
+   c. get survey by id  (gets a survey with given Id) --> mapped to route : get '/api/survey:id'
+   d. Answer Survey (Answers a particular Survey) :  --> mapped to route : put'/api/survey/:id'
+   e. Get Aggregated survey -- >  mapped to route : get '/api/survey/aggregated/result'
  
 4. The Endpoint to get Aggregated survey gets all the grouped survey based on the survey name
    For Ex: If you create a Programing language survey and a Gaming Survey, the aggregated survey
@@ -207,11 +207,11 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
    Data Access layer is not used as the data is stored using node-cache.
 
 3. Overall Five API's are exposed from this service to perform CRUD operation for the service
-   a. create : (Creates a Survey with questions) --> mapped to route : '/'
-   b  get All survey  (gets all survey) --> mapped to route : 'get/'
-   c. get survey by id  (gets a survey with given Id) --> mapped to route : 'get/:id'
-   d. Answer Survey (Answers a particular Survey) :  --> mapped to route : 'update/:id'
-   e. Get Aggregated survey -- >  mapped to route : '/aggregated/result'
+   a. create : (Creates a Survey with questions) --> mapped to route : post '/api/survey/'
+   b  get All survey  (gets all survey) --> mapped to route : get '/api/survey/'
+   c. get survey by id  (gets a survey with given Id) --> mapped to route : get '/api/survey:id'
+   d. Answer Survey (Answers a particular Survey) :  --> mapped to route : put'/api/survey/:id'
+   e. Get Aggregated survey -- >  mapped to route : get '/api/survey/aggregated/result'
  
 4. All endpoints follows http verbs and naming protocols
    for example: create survey is created with following convention : post : '/api/survey/'
